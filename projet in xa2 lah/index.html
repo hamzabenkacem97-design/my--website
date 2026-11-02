@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRH COLLECTION | Haute Couture, Parfums & Sport Luxury</title>
+  <meta name="description" content="Maison HRH Collection - Fondée par Hamza, Reda et Houssam. Parfums d'exception, Soins de Luxe, Maquillage Haute Couture et Équipements de Football Pro.">
+  <meta name="theme-color" content="#050505">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js for Admin Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Parallax Animated Background -->
+  <div id="parallax-container"></div>
+
+  <!-- Top VIP Bar -->
+  <div class="top-bar">
+    <i data-lucide="crown" style="width: 13px; vertical-align: middle; margin-right: 4px;"></i>
+    MAISON HRH COLLECTION • LIVRAISON VIP DANS TOUT LE MAROC • PAIEMENT À LA LIVRAISON CASH ON DELIVERY
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="#" class="nav-brand" onclick="App.setCategory('Tous')">
+      <img src="assets/logo.jpg" alt="HRH Monogram Logo" class="logo-img">
+      <div>
+        <span class="brand-title gold-text">HRH</span>
+        <span class="brand-sub">COLLECTION</span>
+      </div>
+    </a>
+
+    <!-- Main Navigation Menu -->
+    <ul class="nav-menu" id="nav-menu">
+      <!-- Parfums Dropdown -->
+      <li class="nav-item">
+        <a href="#parfums" class="nav-link" onclick="App.setCategory('Parfums Femme')">
+          Parfums <i data-lucide="chevron-down" style="width: 14px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="App.setCategory('Parfums Femme')"><i data-lucide="sparkles" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Parfums Femme</a>
+          <a class="dropdown-item" onclick="App.setCategory('Parfums Homme')"><i data-lucide="flame" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Parfums Homme</a>
+        </div>
+      </li>
+
+      <!-- Femme Dropdown -->
+      <li class="nav-item">
+        <a href="#femme" class="nav-link" onclick="App.setGenderMode('Femme')">
+          Femme <i data-lucide="chevron-down" style="width: 14px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="App.setCategory('Maquillage')"><i data-lucide="palette" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Maquillage Luxe</a>
+          <a class="dropdown-item" onclick="App.setCategory('Soin Visage')"><i data-lucide="heart" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Soin Visage Or 24K</a>
+          <a class="dropdown-item" onclick="App.setCategory('Cheveux')"><i data-lucide="scissors" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Cheveux & Élixirs</a>
+        </div>
+      </li>
+
+      <!-- Homme Dropdown -->
+      <li class="nav-item">
+        <a href="#homme" class="nav-link" onclick="App.setGenderMode('Homme')">
+          Homme <i data-lucide="chevron-down" style="width: 14px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="App.setCategory('Chaussettes Foot')"><i data-lucide="footprints" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Chaussettes Foot Pro Grip</a>
+          <a class="dropdown-item" onclick="App.setCategory('Bandeaux Cheveux Sport')"><i data-lucide="activity" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Bandeaux Cheveux Sport</a>
+          <a class="dropdown-item" onclick="App.setCategory('Accessoires Football')"><i data-lucide="trophy" style="width: 14px; vertical-align: middle; margin-right: 6px;"></i> Accessoires Football</a>
+        </div>
+      </li>
+
+      <!-- Promotions Link -->
+      <li class="nav-item">
+        <a href="#promotions" class="nav-link gold-text" onclick="App.setCategory('Promo')">
+          <i data-lucide="percent" style="width: 14px; vertical-align: middle;"></i> Promotions VIP
+        </a>
+      </li>
+    </ul>
+
+    <!-- Header Right Icons -->
+    <div class="header-actions">
+      <button class="icon-btn" onclick="document.getElementById('central-search-input').focus(); document.getElementById('catalog-section').scrollIntoView({behavior:'smooth'});" title="Recherche">
+        <i data-lucide="search" style="width: 18px;"></i>
+      </button>
+
+      <button class="icon-btn" onclick="App.toggleCart(true)" title="Panier d'exception">
+        <i data-lucide="shopping-bag" style="width: 18px;"></i>
+        <span class="cart-badge" id="cart-badge-count">0</span>
+      </button>
+
+      <!-- Secret Admin Trigger Link -->
+      <a href="#admin" class="icon-btn" title="Espace Mol Chi Admin" style="border-color: var(--gold-main); color: var(--gold-main);">
+        <i data-lucide="shield-lock" style="width: 18px;"></i>
+      </a>
+
+      <button class="hamburger-btn" onclick="document.getElementById('nav-menu').classList.toggle('mobile-active')">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO SLIDER SECTION -->
+    <section class="hero-slider">
+      <div class="slide-item active" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1800&q=80');">
+        <div class="slide-overlay">
+          <span class="hero-subtitle">Maison Haute Couture & Sport Luxury</span>
+          <h1 class="hero-title font-serif">VOTRE STYLE, VOTRE ARÈNE</h1>
+          <p style="color: #DDD; max-width: 600px; font-size: 0.95rem; margin-bottom: 28px; line-height: 1.6;">
+            Fondé par Hamza, Reda & Houssam. Découvrez l'alliance suprême entre la parfumerie d'exception et la performance athlétique haut de gamme.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-gold" onclick="App.setGenderMode('Femme'); document.getElementById('catalog-section').scrollIntoView({behavior:'smooth'});">
+              <i data-lucide="sparkles"></i> Collection Femme
+            </button>
+            <button class="btn-outline-gold" onclick="App.setGenderMode('Homme'); document.getElementById('catalog-section').scrollIntoView({behavior:'smooth'});">
+              <i data-lucide="trophy"></i> Collection Homme
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 CATEGORIES HIGHLIGHT CARDS -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Univers HRH</span>
+        <h2 class="section-title">DES COLLECTIONS SUR-MESURE</h2>
+      </div>
+
+      <div class="categories-grid">
+        <!-- Card 1: Haute Parfumerie -->
+        <div class="category-card" onclick="App.setCategory('Parfums Femme')">
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80" alt="Haute Parfumerie HRH">
+          <div class="category-card-overlay">
+            <span style="color: var(--gold-main); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Exclusivité HRH</span>
+            <h3 class="category-card-title">Haute Parfumerie</h3>
+            <p class="category-card-desc">Accords précieux de Rose de Grasse, Oud rare et Amber impérial.</p>
+            <span class="btn-gold" style="padding: 8px 16px; font-size: 0.75rem; width: fit-content;">Découvrir</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Luxe Féminin -->
+        <div class="category-card" onclick="App.setGenderMode('Femme')">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Soin & Beauté HRH">
+          <div class="category-card-overlay">
+            <span style="color: var(--gold-main); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Or 24K & Caviar</span>
+            <h3 class="category-card-title">Luxe Féminin</h3>
+            <p class="category-card-desc">Sérums régénérants, maquillage mat absolu et huiles de soie.</p>
+            <span class="btn-gold" style="padding: 8px 16px; font-size: 0.75rem; width: fit-content;">Découvrir</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Performance Football -->
+        <div class="category-card" onclick="App.setGenderMode('Homme')">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80" alt="Sport Elegance HRH">
+          <div class="category-card-overlay">
+            <span style="color: var(--gold-main); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Performance Pro</span>
+            <h3 class="category-card-title">Sport Football Pro</h3>
+            <p class="category-card-desc">Chaussettes Pro Grip, protège-tibias en carbone et bandeaux tech.</p>
+            <span class="btn-gold" style="padding: 8px 16px; font-size: 0.75rem; width: fit-content;">Découvrir</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG & SEARCH SECTION -->
+    <section class="section-container" id="catalog-section">
+      
+      <!-- Central Search Bar -->
+      <div class="search-bar-central">
+        <div class="search-input-wrapper">
+          <i data-lucide="search" style="color: var(--gold-main); margin-right: 8px;"></i>
+          <input type="text" id="central-search-input" placeholder="Rechercher un parfum, un soin ou un accessoire de foot HRH...">
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="Tous" onclick="App.setCategory('Tous')">Tout le Catalogue</button>
+        <button class="filter-btn" data-category="Parfums Femme" onclick="App.setCategory('Parfums Femme')">Parfums Femme</button>
+        <button class="filter-btn" data-category="Parfums Homme" onclick="App.setCategory('Parfums Homme')">Parfums Homme</button>
+        <button class="filter-btn" data-category="Maquillage" onclick="App.setCategory('Maquillage')">Maquillage</button>
+        <button class="filter-btn" data-category="Soin Visage" onclick="App.setCategory('Soin Visage')">Soin Visage</button>
+        <button class="filter-btn" data-category="Cheveux" onclick="App.setCategory('Cheveux')">Cheveux</button>
+        <button class="filter-btn" data-category="Chaussettes Foot" onclick="App.setCategory('Chaussettes Foot')">Chaussettes Foot</button>
+        <button class="filter-btn" data-category="Bandeaux Cheveux Sport" onclick="App.setCategory('Bandeaux Cheveux Sport')">Bandeaux Sport</button>
+        <button class="filter-btn" data-category="Accessoires Football" onclick="App.setCategory('Accessoires Football')">Accessoires Football</button>
+        <button class="filter-btn gold-text" data-category="Promo" onclick="App.setCategory('Promo')">🔥 Offres Promo</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid-container"></div>
+    </section>
+
+    <!-- PROMO BANNER & COUNTDOWN -->
+    <section class="section-container">
+      <div class="promo-banner">
+        <span class="hero-subtitle">Ventes Privées VIP HRH</span>
+        <h2 class="font-serif" style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-top: 8px;">-30% SUR TOUTE LA COLLECTION HAUTE PARFUMERIE</h2>
+        <p style="color: #CCC; max-width: 650px; margin: 12px auto; font-size: 0.9rem;">
+          Profitez d'une offre d'exception limitée. Livraison gratuite pour toute commande aujourd'hui.
+        </p>
+
+        <div class="promo-countdown">
+          <div class="time-box"><div class="time-number">08</div><div class="time-label">Heures</div></div>
+          <div class="time-box"><div class="time-number">42</div><div class="time-label">Minutes</div></div>
+          <div class="time-box"><div class="time-number">19</div><div class="time-label">Secondes</div></div>
+        </div>
+
+        <button class="btn-gold" onclick="App.setCategory('Promo')">
+          <i data-lucide="sparkles"></i> Profiter de l'Offre VIP
+        </button>
+      </div>
+    </section>
+
+    <!-- POURQUOI HRH COLLECTION SECTION -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Engagement d'Excellence</span>
+        <h2 class="section-title">POURQUOI HRH COLLECTION ?</h2>
+      </div>
+
+      <div class="why-hrh-grid">
+        <div class="why-card">
+          <div class="why-icon"><i data-lucide="award"></i></div>
+          <h3 class="why-title">100% Authenticité Garantie</h3>
+          <p class="why-desc">Ingrédients nobles certifiés et finitions carbone & cuir créés selon les normes Balmain / LV.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i data-lucide="truck"></i></div>
+          <h3 class="why-title">Livraison VIP 24h-48h</h3>
+          <p class="why-desc">Expédition express sécurisée dans toutes les villes du Maroc (Casablanca, Rabat, Marrakech, etc.).</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i data-lucide="shield-check"></i></div>
+          <h3 class="why-title">Paiement à la Livraison</h3>
+          <p class="why-desc">Payez en toute sérénité en espèces après vérification de votre colis à la livraison.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i data-lucide="headphones"></i></div>
+          <h3 class="why-title">Conciergerie Privée 24/7</h3>
+          <p class="why-desc">Service client dédié sur WhatsApp par l'équipe HRH (Hamza, Reda & Houssam).</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <img src="assets/logo.jpg" style="width: 42px; height: 42px; border-radius: 4px; border: 1px solid var(--border-gold);" alt="Logo HRH">
+          <div>
+            <span class="brand-title gold-text" style="font-size: 1.1rem;">HRH</span>
+            <span class="brand-sub" style="font-size: 0.55rem;">COLLECTION</span>
+          </div>
+        </div>
+        <p>Maison de Luxe moderne fondée par <strong>Hamza</strong>, <strong>Reda</strong> et <strong>Houssam</strong>. Parfums d'exception, soins Or 24K & équipements sportifs pro.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a onclick="App.setCategory('Parfums Femme')">Parfums Femme</a></li>
+          <li><a onclick="App.setCategory('Parfums Homme')">Parfums Homme</a></li>
+          <li><a onclick="App.setCategory('Maquillage')">Maquillage & Soin</a></li>
+          <li><a onclick="App.setCategory('Chaussettes Foot')">Chaussettes Foot Pro</a></li>
+          <li><a onclick="App.setCategory('Promo')">Offres Spéciales</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Concierge</h4>
+        <p><i data-lucide="map-pin" style="width: 14px; vertical-align: middle; margin-right: 6px; color: var(--gold-main);"></i> Triangle d'Or, Maarif, Casablanca</p>
+        <p><i data-lucide="phone" style="width: 14px; vertical-align: middle; margin-right: 6px; color: var(--gold-main);"></i> <span id="footer-phone-text">+212 6 75 78 68 99</span></p>
+        <p><i data-lucide="mail" style="width: 14px; vertical-align: middle; margin-right: 6px; color: var(--gold-main);"></i> <span id="footer-email-text">contact@hrh-collection.ma</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mol Chi Direct Access</h4>
+        <p style="margin-bottom: 12px;">Accès sécurisé réservé à l'administration du site.</p>
+        <a href="#admin" class="btn-outline-gold" style="font-size: 0.75rem; padding: 8px 16px;">
+          <i data-lucide="shield-lock"></i> Connexion /admin-hrh-secure
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 HRH COLLECTION (Hamza • Reda • Houssam). Tous droits réservés.</div>
+      <div>Designed with Balmain & LV Luxe Elegance</div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/212675786899?text=Bonjour%20HRH%20Collection,%20je%20souhaite%20des%20informations..." id="floating-wa-btn" target="_blank" class="whatsapp-float" title="Contactez-nous sur WhatsApp">
+    <i data-lucide="message-circle" style="width: 28px; height: 28px;"></i>
+  </a>
+
+  <!-- SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <i data-lucide="shopping-bag" style="color: var(--gold-main);"></i>
+        <h4 class="font-serif gold-text" style="font-size: 1.1rem;">VOTRE PANIER HRH</h4>
+      </div>
+      <button onclick="App.toggleCart(false)" style="background: transparent; border: none; color: #FFF; cursor: pointer; font-size: 1.2rem;">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cart-drawer-body"></div>
+
+    <div class="cart-footer" id="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <span style="font-size: 0.85rem; color: #AAA; text-transform: uppercase;">Total Général :</span>
+        <strong id="cart-total-amount" class="font-serif" style="font-size: 1.4rem; color: #FFF;">0 DH</strong>
+      </div>
+      <button class="btn-gold" style="width: 100%; justify-content: center;" onclick="App.openCheckoutModal()">
+        <i data-lucide="check-square"></i> Passer la Commande (COD)
+      </button>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="App.closeModal('checkout-modal')"><i data-lucide="x"></i></button>
+
+      <h3 class="font-serif gold-text" style="font-size: 1.5rem; margin-bottom: 4px; text-align: center;">FINALISER VOTRE COMMANDE</h3>
+      <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-bottom: 24px;">Paiement en espèces à la livraison (Cash on Delivery)</p>
+
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="checkout-name"><i data-lucide="user" style="width: 14px; color: var(--gold-main);"></i> Nom & Prénom Complet</label>
+          <input type="text" id="checkout-name" class="form-input" required placeholder="ex: Reda El Mansouri">
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-phone"><i data-lucide="phone" style="width: 14px; color: var(--gold-main);"></i> Numéro de Téléphone (WhatsApp)</label>
+          <input type="tel" id="checkout-phone" class="form-input" required placeholder="06 12 34 56 78">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label for="checkout-city"><i data-lucide="map-pin" style="width: 14px; color: var(--gold-main);"></i> Ville de Livraison</label>
+            <select id="checkout-city" class="form-select" onchange="App.handleCityChange(this.value)">
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Fès">Fès</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Meknès">Meknès</option>
+              <option value="Oujda">Oujda</option>
+              <option value="Nador">Nador</option>
+              <option value="Kénitra">Kénitra</option>
+              <option value="Tétouan">Tétouan</option>
+              <option value="El Jadida">El Jadida</option>
+              <option value="Safi">Safi</option>
+              <option value="Mohammedia">Mohammedia</option>
+              <option value="Laâyoune">Laâyoune</option>
+              <option value="Dakhla">Dakhla</option>
+              <option value="Beni Mellal">Beni Mellal</option>
+              <option value="Khouribga">Khouribga</option>
+              <option value="Berkane">Berkane</option>
+              <option value="Essaouira">Essaouira</option>
+              <option value="Taza">Taza</option>
+              <option value="Larache">Larache</option>
+              <option value="Guelmim">Guelmim</option>
+              <option value="Settat">Settat</option>
+              <option value="Berrechid">Berrechid</option>
+              <option value="Errachidia">Errachidia</option>
+              <option value="Tiznit">Tiznit</option>
+              <option value="Ouarzazate">Ouarzazate</option>
+              <option value="Al Hoceima">Al Hoceima</option>
+              <option value="Chefchaouen">Chefchaouen</option>
+              <option value="Ifrane">Ifrane</option>
+              <option value="Autre Ville">Autre Ville du Maroc (Écrire le nom...)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i data-lucide="shield-check" style="width: 14px; color: var(--gold-main);"></i> Mode de Paiement</label>
+            <input type="text" class="form-input" value="Cash on Delivery (COD)" readonly style="color: var(--gold-light); cursor: not-allowed; background: rgba(255,255,255,0.02);">
+          </div>
+        </div>
+
+        <div class="form-group" id="custom-city-group" style="display: none;">
+          <label for="checkout-custom-city"><i data-lucide="navigation" style="width: 14px; color: var(--gold-main);"></i> Précisez le Nom de Votre Ville</label>
+          <input type="text" id="checkout-custom-city" class="form-input" placeholder="Écrivez le nom de votre ville ici (ex: Ksar El Kebir, Midelt, Azrou...)">
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-address"><i data-lucide="home" style="width: 14px; color: var(--gold-main);"></i> Adresse de Livraison Complète</label>
+          <textarea id="checkout-address" class="form-textarea" rows="2" required placeholder="Numéro, Rue, Quartier..."></textarea>
+        </div>
+
+        <!-- Order Summary Box -->
+        <div id="checkout-order-summary" style="background: rgba(212, 175, 55, 0.06); border: 1px dashed var(--border-gold); padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span style="color: #AAA;">Livraison VIP Express :</span>
+            <span style="color: var(--gold-main); font-weight: 700;">GRATUITE (0 DH)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #FFF; font-weight: 600;">Total à payer à la livraison :</span>
+            <strong id="checkout-summary-total" class="font-serif gold-text" style="font-size: 1.25rem;">0 DH</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 16px; font-size: 0.9rem;">
+          <i data-lucide="check-circle-2"></i> Confirmer la Commande VIP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="App.closeModal('product-modal')"><i data-lucide="x"></i></button>
+      <div id="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="order-success-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="App.closeModal('order-success-modal')"><i data-lucide="x"></i></button>
+      <div id="order-success-body"></div>
+    </div>
+  </div>
+
+  <!-- SECRET ADMIN MODAL (/admin-hrh-secure OR #admin) -->
+  <div class="modal-overlay" id="admin-modal" style="padding: 0;">
+    <div style="width: 100vw; height: 100vh; background: #050505; overflow-y: auto; position: relative;">
+      <button class="modal-close" onclick="App.closeModal('admin-modal'); window.location.hash='#';" style="top: 20px; right: 20px; z-index: 300;">
+        <i data-lucide="x"></i> Fermer Admin
+      </button>
+      <div id="admin-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ADD/EDIT PRODUCT MODAL -->
+  <div class="modal-overlay" id="product-form-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="App.closeModal('product-form-modal')"><i data-lucide="x"></i></button>
+      <h3 id="product-form-title" class="font-serif gold-text" style="font-size: 1.4rem; margin-bottom: 18px;">Formulaire Produit</h3>
+      <form id="product-crud-form" onsubmit="Admin.handleProductFormSubmit(event)"></form>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+
+  <script>
+    // Initialize Lucide icons on load
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
